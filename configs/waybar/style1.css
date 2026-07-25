@@ -1,0 +1,277 @@
+/* ============================================
+   Waybar Style - Cyberpunk Busgirl Theme
+   Black background, Pink borders & text
+   ============================================ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Z003", "Font Awesome", "Nerd Font";
+    font-size: 15px;
+    min-height: 0;
+}
+
+/* Main waybar window */
+window#waybar {
+    background-color: #000000;
+    color: #FFB6C1;
+    border-bottom: 2px solid #FF69B4;
+    margin: 0;
+    padding: 0;
+}
+
+/* All modules - rounded blocks */
+#workspaces,
+#clock,
+#custom-weather,
+#network,
+#backlight,
+#pulseaudio,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#custom-launcher,
+#custom-notification,
+#tray,
+#custom-power,
+#power {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin: 2px 4px;
+}
+
+/* Hover effect - PINK BORDERS */
+#workspaces button:hover,
+#custom-launcher:hover,
+#clock:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#custom-power:hover {
+    background-color: #0a0a0a;
+    border-color: #FF69B4;  
+}
+
+/* Workspace buttons - Shows numbers 1-11 */
+#workspaces button {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 6px;
+    padding: 0 8px;
+    margin: 2px 3px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background-color: #0a0a0a;
+    border-color: #FF69B4; 
+    color: #FFB6C1;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: #FF69B4;
+    color: #000000;
+    border-color: #FF69B4;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #ff0000;
+}
+
+/* Launcher */
+#custom-launcher {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#custom-launcher:hover {
+    background-color: #FF69B4;
+    color: #000000;
+    border-color: #FF69B4;
+}
+
+/* Clock */
+#clock {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-weight: 600;
+}
+
+/* Weather */
+#custom-weather {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+/* PulseAudio */
+#pulseaudio {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+#pulseaudio.muted {
+    background-color: #000000;
+    color: #ff6b6b;
+}
+
+/* Music Player */
+#custom-player {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-weight: 600;
+}
+
+#custom-player:hover {
+    background-color: #0a0a0a;
+    border-color: #FF69B4;  
+}
+
+/* Battery */
+#battery {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+#battery.charging {
+    color: #66BB6A;
+}
+
+#battery.critical {
+    background-color: #000000;
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+/* CPU */
+#cpu {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+/* Memory */
+#memory {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+/* temperature */
+#temperature {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+/* Backlight */
+#backlight {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+/* Tray */
+#tray {
+    background-color: #000000;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 8px;
+    margin: 2px 4px;
+}
+
+/* Power button */
+#custom-power,
+#power {
+    background-color: #000000;
+    color: #FF69B4;
+    border: 1px solid #FF69B4;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#custom-power:hover,
+#power:hover {
+    background-color: #FF69B4;
+    color: #000000;
+}
+
+/* Tooltip styling - PINK BORDERS */
+tooltip {
+    background-color: #000000;
+    border: 1px solid #FF69B4; 
+    border-radius: 8px;
+    padding: 8px;
+}
+
+tooltip label {
+    color: #FFB6C1;
+    font-family: "Z003", "Hack Nerd Font";
+    font-size: 14px;
+}
+
+/* Calendar tooltip - PINK BORDERS */
+#calendar {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4; 
+    border-radius: 8px;
+    font-family: "Z003", "Hack Nerd Font";
+    font-size: 14px;
+}
+
+#calendar.today {
+    background-color: #FF69B4;
+    color: #000000;
+    font-family: "Z003", "Hack Nerd Font";
+    font-weight: bold;
+}
+
+/* Custom-notification */
+#custom-notification {
+    background-color: #000000;
+    color: #FFB6C1;
+    border: 1px solid #FF69B4;
+    border-radius: 6px;
+    padding: 0 8px;
+}

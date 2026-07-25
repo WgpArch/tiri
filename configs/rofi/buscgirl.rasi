@@ -1,0 +1,77 @@
+/* Busgirl Cyberpunk Theme for Rofi */
+* {
+    foreground: #FFB6C1;
+    background: transparent;
+    bordercolor: #FF69B4;
+    separatorcolor: #FF69B4;
+    selected-normal-foreground: #000000;
+    selected-normal-background: #FF69B4;
+    normal-foreground: #FFB6C1;
+    alternate-normal-background: transparent;
+    urgent-foreground: #00FFFF;
+    active-foreground: #00FFFF;
+    background-color: transparent;
+    normal-background: transparent;
+}
+
+window {
+    background-color: transparent;
+    background-image: url("/home/wgparch/Pictures/ALNW/Busgirl_resized.jpg");
+    border: 2px;
+    border-radius: 12px;
+    border-color: @bordercolor;
+    padding: 1em;
+    spacing: 0px;
+}
+
+inputbar {
+    background-color: transparent;
+    border: 1px;
+    border-color: @bordercolor;
+    border-radius: 8px;
+    padding: 0.5em;
+    children: [prompt, entry];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+listview {
+    background-color: transparent;
+    border: 0px;
+    spacing: 2px;
+    lines: 10;
+}
+
+element {
+    background-color: transparent;
+    padding: 4px;
+    border: 0px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element.normal.normal {
+    background-color: transparent;
+    text-color: @normal-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}
+
+element.alternate.normal {
+    background-color: transparent;
+    text-color: @normal-foreground;
+}

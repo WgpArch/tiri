@@ -1,0 +1,127 @@
+// Minimal Tiri Configuration
+// Tiri is an i3/sway-like tiling Wayland compositor built from niri.
+
+// ─────────────────────────────────────────────────────────────
+// 1. INPUT CONFIGURATION
+// ─────────────────────────────────────────────────────────────
+input {
+    keyboard {
+        numlock
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+}
+
+// ─────────────────────────────────────────────────────────────
+// HOTKEY OVERLAY SETTINGS
+// ─────────────────────────────────────────────────────────────
+hotkey-overlay {
+    // Prevents the overlay from showing
+    skip-at-startup
+
+    // Hides all the "(not bound)" 
+    hide-not-bound
+}
+
+// ─────────────────────────────────────────────────────────────
+// 2. OUTPUT CONFIGURATION 
+// ─────────────────────────────────────────────────────────────
+output "LVDS-1" {
+    mode "1366x768"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+}
+
+// ─────────────────────────────────────────────────────────────
+// 3. LAYOUT CONFIGURATION
+// ─────────────────────────────────────────────────────────────
+layout {
+    gaps 10
+
+    // Simple, clean focus ring
+    focus-ring {
+        width 6
+        active-color "#FF69B4" 
+        inactive-color "#505050"
+    }
+}
+
+// ─────────────────────────────────────────────────────────────
+// 4. STARTUP APPLICATIONS & GLOBAL SETTINGS
+// ─────────────────────────────────────────────────────────────
+spawn-at-startup "swaybg" "-i" "/home/wgparch/Pictures/ALNW/Busgirl.jpg"
+spawn-at-startup "waybar" "-c" "/etc/xdg/waybar/config1.jsonc" "-s" "/etc/xdg/waybar/style1.css"
+spawn-at-startup "nm-applet" "--indicator"
+
+// Screenshot path
+screenshot-path "/home/wgparch/Pictures/Screenshots/tiri/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// ─────────────────────────────────────────────────────────────
+// 5. KEYBINDS (Essential i3-like bindings only)
+// ─────────────────────────────────────────────────────────────
+binds {
+    // ── "Mod" is Super (Windows key) on a TTY, or Alt if running in a window.
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    // ── Apps ──
+    Mod+Return { spawn "lxterminal"; }
+    Mod+D      { spawn "rofi" "-show" "drun" "-theme" "/home/wgparch/.config/tiri/rofi/buscgirl.rasi"; }
+
+    // ── Power Menu ──
+    Mod+Shift+P { spawn "/home/wgparch/.config/tiri/rofi/powermenu.sh"; }
+
+    // ── Window Management ──
+    Mod+Shift+Q { close-window; }
+    Mod+F       { fullscreen-window; }
+
+    // ── Screenshots (allow-inhibiting=false ensures it works over menus/tooltips) ──
+    Print allow-inhibiting=false { screenshot; }
+    Ctrl+Print allow-inhibiting=false { screenshot-screen; }
+    Alt+Print allow-inhibiting=false { screenshot-window; }
+
+    // ── Restart Waybar ─
+    Mod+Shift+R { spawn "killall" "-SIGUSR2" "waybar"; }
+
+    // ── Focus (Arrow keys or HJKL) ──
+    Mod+Left  { focus-container-left; }
+    Mod+Down  { focus-container-down; }
+    Mod+Up    { focus-container-up; }
+    Mod+Right { focus-container-right; }
+    
+    // ── Move Windows (Arrow keys or HJKL) ──
+    Mod+Shift+Left  { move-container-left; }
+    Mod+Shift+Down  { move-container-down; }
+    Mod+Shift+Up    { move-container-up; }
+    Mod+Shift+Right { move-container-right; }
+
+    // ── Workspaces (1-11) ──
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; } 
+    Mod+F1 { focus-workspace 11; }
+
+    Mod+Shift+1 { move-container-to-workspace 1; }
+    Mod+Shift+2 { move-container-to-workspace 2; }
+    Mod+Shift+3 { move-container-to-workspace 3; }
+    Mod+Shift+4 { move-container-to-workspace 4; }
+    Mod+Shift+5 { move-container-to-workspace 5; }
+    Mod+Shift+6 { move-container-to-workspace 6; }
+    Mod+Shift+7 { move-container-to-workspace 7; }
+    Mod+Shift+8 { move-container-to-workspace 8; }
+    Mod+Shift+9 { move-container-to-workspace 9; }
+    Mod+Shift+0 { move-container-to-workspace 10; }
+    Mod+Shift+F1 { move-container-to-workspace 11; }
+
+    // ── Exit Tiri ──
+    Mod+Shift+E { spawn "/home/wgparch/.config/tiri/rofi/powermenu.sh"; }
+}

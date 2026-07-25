@@ -1,0 +1,19 @@
+site_name: Tiri Dotfiles
+site_description: A highly customized Tiri window manager configuration with Waybar and Rofi.
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: blue grey
+    accent: light blue
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Configuration: configuration.md
+  - Theming: theming.md
+  - Gallery: gallery.md
